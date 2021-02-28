@@ -5,6 +5,10 @@ public class Pet {
     private long microchip;
     private boolean potenDangerous;
 
+    public Pet(){
+
+    }
+
     public Pet(String id, String species, String sex, String size, String neighborhood, long microchip, boolean potenDangerous) {
         this.id = id;
         this.species = species;
