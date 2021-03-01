@@ -11,6 +11,16 @@ public class Archive {
     public void OpreacionArchivo(){
 
     }
+    /**
+     * Este metodo permite escribir en el archivo .csv
+     * <b>pre</b> Tiene que existir el archivo .csv <br>
+     * <b>post</b> Se agregaran al archivo .csv<br>
+     *
+     * @param pets Es el arraylist donde se almacenan los datos del animal
+     *                  ingresado
+     * @param petscitizens   Es el archivo donde se van a guardar los datos ingresados
+     *                  por el usuario
+     */
     public void escribirEnArchivo(ArrayList<Pet> pets, File petscitizens) {
         try {
             salida = new ObjectOutputStream(new FileOutputStream(petscitizens));
@@ -24,6 +34,13 @@ public class Archive {
             e.printStackTrace();
         }
     }
+    /**
+     *Esye metodo  permite leer el archivo .csv
+     *<b>pre</b> Tiene que existir el archivo .csv <br>
+     *<b>post</b> Se agregaran al archivo .csv<br>
+     * @param petscitizens Es el archivo que contiene toda la informacion agregada
+     * @return  pets
+     */
     public ArrayList<Pet> leerArchivo(File petscitizens) {
         ArrayList<Pet> pets = new ArrayList<Pet>();
         if (petscitizens.length() != 0) {
