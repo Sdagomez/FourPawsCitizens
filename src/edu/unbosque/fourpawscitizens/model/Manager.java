@@ -17,8 +17,15 @@ import java.util.Scanner;
 
 public class Manager extends Component {
     private Pet pet;
+    private  Archive archive;
+    private PetDao petDao;
+    private  File petscitizens = new File("petscitizens.csv");
+
 
     public Manager() throws ParseException, IOException {
+        petDao = new PetDao();
+        archive = new Archive();
+        petDao.setPets(archive.leerArchivo(petscitizens));
         int x = 0;
 
         while (x != 7) {
@@ -72,10 +79,23 @@ public class Manager extends Component {
                 System.out.println("hola 2 ");
             }
             if (x == 3) {
-                System.out.println("hola 3 ");
+                System.out.println("Ingrese el MicroChip ");
+                Scanner p = new Scanner(System.in);
+                long q = p.nextLong();
+                long mc = q;
+
+                String informacion = petDao.mostrarAnimal(mc);
+                System.out.println(informacion);
             }
             if (x == 4) {
-                System.out.println("hola 4 ");
+                System.out.println("Ingrese la especie ");
+                Scanner o = new Scanner(System.in);
+                String  a = o.next();
+                String especie = a;
+
+                String informacion = petDao.mostrarInfo(especie);
+                System.out.println(informacion);
+
             }
             if (x == 5) {
                 System.out.println("hola 5 ");
@@ -90,5 +110,4 @@ public class Manager extends Component {
             }
         }
     }
-
 }

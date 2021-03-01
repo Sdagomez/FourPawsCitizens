@@ -67,7 +67,7 @@ public class Pet {
         this.microchip = microchip;
     }
 
-    public boolean isPotenDangerous() {
+    public boolean getPotenDangerous() {
         return potenDangerous;
     }
 
