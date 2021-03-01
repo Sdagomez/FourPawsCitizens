@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="66e4a476-455c-4262-b362-0184937be4e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/PetDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/PetDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p5nLD2PrdIkOavAQ0fYAEmsQVU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,6 +30,11 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.unbosque.fourpawscitizens.model" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">

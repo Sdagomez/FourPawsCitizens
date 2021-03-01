@@ -17,9 +17,9 @@ import java.util.Scanner;
 
 public class Manager extends Component {
     private Pet pet;
-    private  Archive archive;
+    private Archive archive;
     private PetDao petDao;
-    private  File petscitizens = new File("petscitizens.csv");
+    private File petscitizens = new File("petscitizens.csv");
 
 
     public Manager() throws ParseException, IOException {
@@ -46,7 +46,6 @@ public class Manager extends Component {
             Scanner n = new Scanner(System.in);
             x = n.nextInt();
             if (x == 1) {
-                System.out.println("Holaaa ");
                 String aux = "";
                 String texto = "";
                 try {
@@ -76,7 +75,7 @@ public class Manager extends Component {
 
             }
             if (x == 2) {
-                System.out.println("hola 2 ");
+
             }
             if (x == 3) {
                 System.out.println("Ingrese el MicroChip ");
@@ -84,24 +83,40 @@ public class Manager extends Component {
                 long q = p.nextLong();
                 long mc = q;
 
-                String informacion = petDao.mostrarAnimal(mc);
+                String informacion = petDao.mostrarAnimal(mc, petDao.getPets());
                 System.out.println(informacion);
             }
             if (x == 4) {
                 System.out.println("Ingrese la especie ");
                 Scanner o = new Scanner(System.in);
-                String  a = o.next();
+                String a = o.next();
                 String especie = a;
 
-                String informacion = petDao.mostrarInfo(especie);
+                String informacion = petDao.mostrarInfo(especie, petDao.getPets() );
                 System.out.println(informacion);
 
             }
             if (x == 5) {
-                System.out.println("hola 5 ");
+                System.out.println("Ingrese un numero ");
+                System.out.println("Ingrese una posicion ");
+                System.out.println("Ingrese un vecindario ");
+                Scanner o = new Scanner(System.in);
+                Scanner p = new Scanner(System.in);
+                Scanner l = new Scanner(System.in);
+
+                int a = o.nextInt();
+                String m = p.next();
+                String z = l.next();
+
+                String vecindario = z;
+                String posicion = m;
+                int numero = a;
+
+                String informacion = petDao.animalesLocalidad(numero ,posicion, vecindario,  petDao.getPets());
+                System.out.println(informacion);
             }
             if (x == 6) {
-                System.out.println("hola 6 ");
+
             }
             if (x == 7) {
 
