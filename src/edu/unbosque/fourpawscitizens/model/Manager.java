@@ -1,108 +1,93 @@
 package edu.unbosque.fourpawscitizens.model;
 
-import com.csvreader.CsvReader;
-import com.csvreader.CsvWriter;
 import edu.unbosque.fourpawscitizens.model.dtos.Pet;
 
-import javax.swing.plaf.basic.BasicListUI;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.*;
+import java.awt.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class Manager {
+import java.util.Arrays;
 
-    Pet pet = new Pet();
+import java.text.ParseException;
+import java.util.Locale;
+import java.util.Scanner;
 
-    public String assignID(){
+public class Manager extends Component {
+    private Pet pet;
+
+    public Manager() throws ParseException, IOException {
+        int x = 0;
+
+        while (x != 7) {
+
+            System.out.println("----------------------------------------------------------------------------------------- ");
+            System.out.println("Bienvenido  a PPDBYBA ");
+            System.out.println("Seleccione un numero para una funcionalidad ");
+            System.out.println("1. Cargar los datos del archivo ");
+            System.out.println("2. Asignar un ID a todas las mascotas ");
+            System.out.println("3. Buscar mascota por microchip ");
+            System.out.println("4. Contar cuantos animales de una especie hay ");
+            System.out.println("5. Buscar animales peligrosos en una zona ");
+            System.out.println("6. Buscar animales con parametros (sexo , especie, tamaño y peligro potencial ");
+            System.out.println("7. Salir del programa ");
+            System.out.println("------------------------------------------------------------------------------------------ ");
 
 
-        return null;
-    }
-    public static void ExportarCsv(List<Pet> pets){
-        String salidaArchivo = "Pet.csv";
-        boolean existe = new File(salidaArchivo).exists();
+            Scanner n = new Scanner(System.in);
+            x = n.nextInt();
+            if (x == 1) {
+                System.out.println("Holaaa ");
+                String aux = "";
+                String texto = "";
+                try {
+                    JFileChooser file = new JFileChooser();
+                    file.showOpenDialog(this);
 
-        //si exite el archivo
-        if (existe){
-            File archivoPet = new File(salidaArchivo);
-            archivoPet.delete();
-        }
-        try{
-            CsvWriter salidaCSV = new CsvWriter(new FileWriter(salidaArchivo, true), ';');
+                    File abre = file.getSelectedFile();
 
-            salidaCSV.write("ID");
-            salidaCSV.write("microchip");
-            salidaCSV.write("species");
-            salidaCSV.write("sex");
-            salidaCSV.write("size");
-            salidaCSV.write("potentDangerous");
-            salidaCSV.write("neighborhood");
 
-            salidaCSV.endRecord();
+                    if (abre != null) {
+                        FileReader archivos = new FileReader(abre);
+                        BufferedReader lee = new BufferedReader(archivos);
+                        while ((aux = lee.readLine()) != null) {
+                            texto += aux + "\n";
+                            System.out.print(texto);
+                        }
+                        lee.close();
+                        System.out.println("El proceso de carga de archivos ha finalizado ");
 
-            for (Pet p :pets){
-                salidaCSV.write(p.getId());
-                salidaCSV.write(String.valueOf(p.getMicrochip()));
-                salidaCSV.write(p.getSpecies());
-                salidaCSV.write(p.getSex());
-                salidaCSV.write(p.getSize());
-                salidaCSV.write(String.valueOf(p.isPotenDangerous()));
-                salidaCSV.write(p.getNeighborhood());
 
-                salidaCSV.endRecord();
-            }
-
-            salidaCSV.close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-    public static void ImportarCSV(){
-        try{
-            List<Pet> pets = new ArrayList<Pet> ();
-            CsvReader leerPets = new CsvReader("Pet.csv");
-            leerPets.readHeaders();
-
-            while(leerPets.readRecord()){
-                String id = leerPets.get(0);
-                String microchip = leerPets.get(1);
-                String species = leerPets.get(2);
-                String sex = leerPets.get(3);
-                String size = leerPets.get(4);
-                String potentDangerous = leerPets.get(5);
-                String neighborhood = leerPets.get(6);
-
-                //  pets.add(new Pet( id,  species,  sex,  size,  neighborhood,  microchip, potentDangerous));
-
-            }
-            leerPets.close();
-
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    public void leerCsv(){
-        ArrayList<ArrayList<String>> datos =  new ArrayList<ArrayList<String>>();
-        Path filePath = Paths.get("pet.csv");
-        try{
-            BufferedReader br = Files.newBufferedReader(filePath);
-            String linea;
-            while ( (linea = br.readLine())!= null){
-                String[] datosDeLinea = linea.split(";");
-                ArrayList<String> datosTem = new ArrayList<String>();
-                for(String dato : datosDeLinea){
-                    datosTem.add(dato);
+                    }
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, ex + "" +
+                                    "\nNo se ha encontrado el archivo",
+                            "ADVERTENCIA!!!", JOptionPane.WARNING_MESSAGE);
                 }
-                datos.add(datosTem);
+
             }
-        }catch (IOException e){
-            e.printStackTrace();
+            if (x == 2) {
+                System.out.println("hola 2 ");
+            }
+            if (x == 3) {
+                System.out.println("hola 3 ");
+            }
+            if (x == 4) {
+                System.out.println("hola 4 ");
+            }
+            if (x == 5) {
+                System.out.println("hola 5 ");
+            }
+            if (x == 6) {
+                System.out.println("hola 6 ");
+            }
+            if (x == 7) {
+
+                System.out.println(" Vuelva Pronto");
+                System.exit(0);
+            }
         }
     }
 
