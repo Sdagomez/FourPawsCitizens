@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66e4a476-455c-4262-b362-0184937be4e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/PetDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/PetDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/dtos/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/fourpawscitizens/model/dtos/Pet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
